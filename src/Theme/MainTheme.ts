@@ -15,6 +15,7 @@ declare module "@mui/material/styles" {
 
 export const MainTheme = createTheme({
   mainColor: "#1B1A20",
+ 
 
   components: {
     MuiCssBaseline: {

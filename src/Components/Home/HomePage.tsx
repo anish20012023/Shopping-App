@@ -1,4 +1,4 @@
-import { Avatar, Box, Container, Icon, Link, Paper, Typography } from "@mui/material";
+import {  Box, Container } from "@mui/material";
 import { useStyles } from "./HomePage.styles";
 import ProfileHeader from "../ProfileHeader/ProfileHeader";
 import SidebarComp from "../Sidebar/SidebarComp";

@@ -10,10 +10,13 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   mainBox: {
+    display: "flex",
+    flexWrap: "wrap",
+    rowGap: "30px",
     "& .loaderBackdrop": {
       //   background: "transparent",
       zIndex: "2",
-      "& div": {
+      "& .loader": {
         width: "90px",
         height: "70px",
         display: "flex",
@@ -26,18 +29,13 @@ export const useStyles = makeStyles((theme) => ({
         },
       },
     },
-
-    display: "flex",
-    flexWrap: "wrap",
-    rowGap: "30px",
   },
-
+  // product card
   productCard: {
     width: "calc(100% / 4)",
     [theme.breakpoints.down("md")]: {
       width: "calc(100% / 2)",
     },
-    // height: "500px",
 
     padding: "10px",
     position: "relative",
@@ -46,7 +44,7 @@ export const useStyles = makeStyles((theme) => ({
     gap: "15px",
 
     "& .imageBox": {
-      minHeight: "320px",
+      minHeight: "325px",
       [theme.breakpoints.down("md")]: {
         minHeight: "auto",
       },
@@ -66,76 +64,74 @@ export const useStyles = makeStyles((theme) => ({
       "& .onhoverImg": {
         display: "block !important",
       },
-      "& .cartBtn": {
+      "& button": {
         background: "#EABF00",
       },
     },
-    //free shipping tag
-    "& .tag": {
-      color: "white",
-      background: "black",
-      fontSize: "9px",
-      padding: " 5px",
+  },
+  //free shipping tag
+  free_shipping: {
+    color: "white",
+    background: "black",
+    fontSize: "9px",
+    padding: " 5px",
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+  },
+
+  // product title
+  title: {
+    height: "50px",
+    position: "relative",
+    padding: "0 10px",
+    "& p": {
+      textAlign: "center",
+    },
+
+    "&::before": {
+      content: '""',
+      width: "20px",
+      height: "2px",
+      background: "#EABF00",
       position: "absolute",
-      top: "10px",
-      right: "10px",
+      bottom: "0",
+      left: "calc((100% - 30px) / 2)",
     },
-    // title
-    "& .title": {
-      height: "50px",
-      position: "relative",
-      padding: "0 10px",
-      "& p": {
-        textAlign: "center",
-      },
+  },
+  // product price
+  price_box: {
+    textAlign: "center",
 
-      "&::before": {
-        content: '""',
-        width: "20px",
-        height: "2px",
-        background: "#EABF00",
-        position: "absolute",
-        bottom: "0",
-        left: "calc((100% - 30px) / 2)",
+    "& .dollar_sign": {
+      fontSize: "11px",
+      marginRight: "8px",
+    },
+    "& .price": {
+      fontSize: "14px",
+      "& span": {
+        fontSize: "20px",
+        fontWeight: "bold",
       },
     },
-    // price and offer
-    "& .price_offer": {
-      // price
-      "& .priceBox": {
-        textAlign: "center",
+  },
+  // installment offers
+  offer_box: {
+    textAlign: "center",
+    color: "#9C9B9B",
+    "& .offer span": {
+      fontWeight: "bold",
+    },
+  },
 
-        "& .dollar": {
-          fontSize: "11px",
-          marginRight: "8px",
-        },
-        "& .price": {
-          fontSize: "14px",
-          "& span": {
-            fontSize: "20px",
-            fontWeight: "bold",
-          },
-        },
-      },
-      //   offer
-      "& .offer": {
-        textAlign: "center",
-        color: "#9C9B9B",
-        "& .offerOr span": {
-          fontWeight: "bold",
-        },
-      },
-    },
-
-    // cart button
-    "& .cartBtn": {
-      width: "100%",
-      borderRadius: "0px",
-      padding: "13px 0",
-      background: "black",
-      color: "white",
-      textTransform: "capitalize",
-      fontWeight: "lighter",
-    },
+  // cart button
+  cartBtn: {
+    width: "100%",
+    borderRadius: "0px",
+    padding: "13px 0",
+    background: "black",
+    color: "white",
+    textTransform: "capitalize",
+    fontWeight: "lighter",
   },
 }));

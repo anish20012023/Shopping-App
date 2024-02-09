@@ -24,18 +24,18 @@ function DrawerComp() {
         </Badge>
       </Box>
       <Drawer open={open} anchor="right" onClose={() => setOpen(false)} className={classes.drawerModal}>
-        <IconButton onClick={() => setOpen(false)} className="closeIcon">
+        <IconButton onClick={() => setOpen(false)} className={classes.closeIcon}>
           <CloseIcon />
         </IconButton>
         {/* cart products */}
         <Box className={classes.cartProduct}>
-          <Box className="cartHeader">
+          <Box className={classes.cartHeader}>
             <Badge badgeContent={!cart.length ? "0" : cart.length} className="cartBadge">
               <img src="images/cart.png" />
             </Badge>
             <Typography>Cart</Typography>
           </Box>
-          <Box className="showcartBox">
+          <Box className={classes.showcartBox}>
             {cart.length === 0 && (
               <Box className="emptycart">
                 <Typography>Add some products in the cart</Typography>
@@ -44,7 +44,7 @@ function DrawerComp() {
             )}
             {cart.map((item) => (
               <Box key={item.id} className={classes.singleCartBox}>
-                <Box className="leftBox">
+                <Box className={classes.singleCartBox_left}>
                   <img src={`images/products/${item.sku}-1-product.webp`} />
                   <Box className="description">
                     <Typography className="title" sx={{ color: "#fff !important" }}>
@@ -56,12 +56,12 @@ function DrawerComp() {
                     <Typography>Quantity: {item.quantity}</Typography>
                   </Box>
                 </Box>
-                <Box className="rightBox">
+                <Box className={classes.singleCartBox_right}>
                   <IconButton className="closeicon" onClick={() => dispatch(removeCart(item.id))}>
                     <CloseIcon />
                   </IconButton>
                   <Typography>$ {(item.price * item.quantity).toFixed(2)}</Typography>
-                  <ButtonGroup className="btnGroup">
+                  <ButtonGroup className={classes.IncDec_btnGroup}>
                     <Button onClick={() => dispatch(decProduct(item.id))}>-</Button>
                     <Button onClick={() => dispatch(incProduct(item.id))}>+</Button>
                   </ButtonGroup>
@@ -72,7 +72,7 @@ function DrawerComp() {
         </Box>
         {/* checkout Box */}
         <Box className={classes.checkoutBox}>
-          <Box className="subTotal">
+          <Box className={classes.subtotal_box}>
             <Typography>SUBTOTAL</Typography>
             <Box sx={{ textAlign: "end" }}>
               <Typography sx={{ color: "#EABF00", fontSize: "21px", fontWeight: "400 !important" }}>

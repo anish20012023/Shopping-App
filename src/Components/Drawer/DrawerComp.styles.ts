@@ -1,7 +1,6 @@
 import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme) => ({
-  cartBadge: {},
   CartIconBox: {
     width: "50px",
     height: "50px",
@@ -50,27 +49,136 @@ export const useStyles = makeStyles((theme) => ({
       position: "static",
       background: theme.mainColor,
     },
-    // close icon button
-    "& .closeIcon": {
-      color: "white",
-      position: "absolute",
-      height: "50px",
-      width: "50px",
-      borderRadius: "0px",
-      right: "100%",
-      background: theme.mainColor,
-      [theme.breakpoints.down("md")]: {
-        left: "0%",
-      },
-      "& svg": {
-        fontSize: "20px !important ",
-      },
+  },
+  // close icon button
+  closeIcon: {
+    color: "white",
+    position: "absolute",
+    height: "50px",
+    width: "50px",
+    borderRadius: "0px",
+    right: "100%",
+    background: theme.mainColor,
+    [theme.breakpoints.down("md")]: {
+      left: "0%",
+    },
+    "& svg": {
+      fontSize: "20px !important ",
+    },
 
-      "&:hover": {
-        backgroundColor: "#17161B",
+    "&:hover": {
+      backgroundColor: "#17161B",
+    },
+  },
+
+  // cart products
+  cartProduct: {
+    height: "calc(100% - 200px)",
+    overflowY: "scroll",
+    padding: "60px 20px 0px",
+
+    "&::-webkit-scrollbar": {
+      width: "10px",
+    },
+    "&::-webkit-scrollbar-track": {
+      background: "#000000",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      background: "#000000",
+      borderRadius: "3px",
+    },
+  },
+  // cart header
+  cartHeader: {
+    color: "#fff",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "25px",
+    "& p": {
+      fontSize: "20px",
+      fontWeight: "bolder",
+    },
+    "& .cartBadge": {
+      "& .MuiBadge-badge": {
+        background: "#E2B801",
+        color: "#000000",
+        top: "120%",
+        padding: "0px",
+        minWidth: "18px",
+        height: "18px",
       },
     },
   },
+  //showcartBox
+  showcartBox: {
+    color: "#fff",
+    marginTop: "60px",
+
+    // emptycart
+    "& .emptycart": {
+      textAlign: "center",
+    },
+  },
+
+  singleCartBox: {
+    borderTop: "2px solid rgba(0,0,0,0.2)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "15px 0px",
+  },
+  // left box
+  singleCartBox_left: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+
+    "& img": {
+      width: "60px",
+      height: "90px",
+      objectFit: "cover",
+    },
+    "& .description": {
+      "& p": {
+        color: "#5B5A5E",
+      },
+    },
+  },
+  // right box
+  singleCartBox_right: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    alignSelf: "stretch",
+
+    "& .closeicon ": {
+      padding: "0px",
+
+      "& .MuiSvgIcon-root": {
+        fontSize: "20px !important",
+      },
+    },
+    "& p": {
+      color: "#E2B801",
+    },
+  },
+  IncDec_btnGroup: {
+    "& button": {
+      padding: "0px",
+      borderRadius: "0px",
+      minWidth: "25px !important",
+      height: "25px",
+      border: "0px !important",
+      color: "gray",
+      background: "rgba(0,0,0,.5) !important",
+      "&:nth-child(1)": {
+        background: "rgba(0,0,0,.2) !important",
+      },
+    },
+  },
+
   // checkout box
   checkoutBox: {
     color: "white",
@@ -92,123 +200,16 @@ export const useStyles = makeStyles((theme) => ({
       fontWeight: "lighter",
       background: "#000000",
     },
-    "& .subTotal": {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      paddingBottom: "30px",
-      color: "#5B5A5E",
-      "& p": {
-        fontWeight: "lighter",
-      },
-    },
   },
-  // cart products
-  cartProduct: {
-    height: "calc(100% - 200px)",
-    overflowY: "scroll",
-    padding: "60px 20px 0px",
 
-    "&::-webkit-scrollbar": {
-      width: "10px",
-    },
-    "&::-webkit-scrollbar-track": {
-      // background: "#1B1A20",
-      background: "#000000",
-    },
-    "&::-webkit-scrollbar-thumb": {
-      background: "#000000",
-      borderRadius: "3px",
-    },
-
-    "&  .cartHeader": {
-      color: "#fff",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "25px",
-      "& p": {
-        fontSize: "20px",
-        fontWeight: "bolder",
-      },
-      "& .cartBadge": {
-        "& .MuiBadge-badge": {
-          background: "#E2B801",
-          color: "#000000",
-          top: "120%",
-          padding: "0px",
-          minWidth: "18px",
-          height: "18px",
-        },
-      },
-    },
-    // emptycart
-    "& .emptycart": {
-      textAlign: "center",
-    },
-
-    //showcartBox
-    "& .showcartBox": {
-      color: "#fff",
-      // border: "1px solid",
-      marginTop: "60px",
-    },
-  },
-  singleCartBox: {
-    borderTop: "2px solid rgba(0,0,0,0.2)",
+  subtotal_box: {
     display: "flex",
-    alignItems: "center",
     justifyContent: "space-between",
-    padding: "15px 0px",
-    // left box
-    "& .leftBox": {
-      display: "flex",
-      alignItems: "center",
-      gap: "10px",
-
-      "& img": {
-        width: "60px",
-        height: "90px",
-        objectFit: "cover",
-      },
-      "& .description": {
-        "& p": {
-          color: "#5B5A5E",
-        },
-      },
-    },
-    // right box
-    "& .rightBox": {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      alignItems: "flex-end",
-      alignSelf: "stretch",
-
-      "& .closeicon ": {
-        padding: "0px",
-
-        "& .MuiSvgIcon-root": {
-          fontSize: "20px !important",
-        },
-      },
-      "& p": {
-        color: "#E2B801",
-      },
-      "& .btnGroup.MuiButtonGroup-root": {
-        "& button": {
-          padding: "0px",
-          borderRadius: "0px",
-          minWidth: "25px",
-          height: "25px",
-          border: "0px",
-          color: "gray",
-          background: "rgba(0,0,0,.5)",
-          "&:nth-child(1)": {
-            background: "rgba(0,0,0,.2)",
-          },
-        },
-      },
+    alignItems: "center",
+    paddingBottom: "30px",
+    color: "#5B5A5E",
+    "& p": {
+      fontWeight: "lighter",
     },
   },
 }));
