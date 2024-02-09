@@ -49,7 +49,7 @@ function Products() {
                 </span>
               </Box>
             </Box>
-            {/* Add to car button */}
+            {/* Add to cart button */}
             <Button className={classes.cartBtn} onClick={() => dispatch(addCart({ ...item, quantity: 1 }))}>
               Add to cart
             </Button>

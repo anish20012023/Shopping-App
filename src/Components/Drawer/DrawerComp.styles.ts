@@ -52,28 +52,31 @@ export const useStyles = makeStyles((theme) => ({
   },
   // close icon button
   closeIcon: {
-    color: "white",
-    position: "absolute",
-    height: "50px",
-    width: "50px",
-    borderRadius: "0px",
-    right: "100%",
-    background: theme.mainColor,
-    [theme.breakpoints.down("md")]: {
-      left: "0%",
-    },
-    "& svg": {
-      fontSize: "20px !important ",
-    },
+    "&.MuiIconButton-root": {
+      color: "white",
+      position: "absolute",
+      height: "50px",
+      width: "50px",
+      borderRadius: "0px",
+      right: "100% !important",
+      background: theme.mainColor,
+      [theme.breakpoints.down("md")]: {
+        left: "0%",
+      },
+      "& svg": {
+        fontSize: "20px !important ",
+      },
 
-    "&:hover": {
-      backgroundColor: "#17161B",
+      "&:hover": {
+        backgroundColor: "#17161B",
+      },
     },
   },
 
   // cart products
   cartProduct: {
-    height: "calc(100% - 200px)",
+    height: "calc(100% - 200px) !important",
+
     overflowY: "scroll",
     padding: "60px 20px 0px",
 
@@ -159,6 +162,9 @@ export const useStyles = makeStyles((theme) => ({
       "& .MuiSvgIcon-root": {
         fontSize: "20px !important",
       },
+      "&:hover": {
+        color: "#fff",
+      },
     },
     "& p": {
       color: "#E2B801",
@@ -196,9 +202,9 @@ export const useStyles = makeStyles((theme) => ({
       borderRadius: "0px",
       padding: "12px 0px",
       color: "#fff",
-      fontSize: "18px",
+      fontSize: "16px",
       fontWeight: "lighter",
-      background: "#000000",
+      background: "#000000 !important",
     },
   },
 

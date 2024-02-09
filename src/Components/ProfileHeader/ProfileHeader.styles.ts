@@ -16,11 +16,11 @@ export const useStyles = makeStyles((theme) => ({
     minHeight: "80px",
     width: "380px",
     margin: "0 auto",
-    borderRadius: "0px",
+    borderRadius: "0px  !important",
     borderBottomLeftRadius: "4px",
     borderBottomRightRadius: "4px",
-    boxShadow: "none",
-    borderTop: "0px",
+    boxShadow: "none !important",
+    borderTop: "0px !important",
     border: "2px solid #EEEEEE",
     display: "flex",
     alignItems: "center",
@@ -30,9 +30,8 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       width: "100%",
       padding: "12px 10px",
-
       border: "2px solid #EEEEEE !important",
-      borderRadius: "4px !important",
+      borderRadius: "4px",
     },
     "& .MuiAvatar-root": {
       width: "55px",

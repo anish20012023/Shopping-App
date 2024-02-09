@@ -41,7 +41,7 @@ export const useStyles = makeStyles((theme) => ({
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    gap: "15px",
+    gap: "10px",
 
     "& .imageBox": {
       minHeight: "325px",
@@ -65,7 +65,7 @@ export const useStyles = makeStyles((theme) => ({
         display: "block !important",
       },
       "& button": {
-        background: "#EABF00",
+        background: "#EABF00 !important",
       },
     },
   },
@@ -110,8 +110,8 @@ export const useStyles = makeStyles((theme) => ({
     "& .price": {
       fontSize: "14px",
       "& span": {
-        fontSize: "20px",
-        fontWeight: "bold",
+        fontSize: "24px",
+        fontWeight: "900",
       },
     },
   },
@@ -126,12 +126,14 @@ export const useStyles = makeStyles((theme) => ({
 
   // cart button
   cartBtn: {
-    width: "100%",
-    borderRadius: "0px",
-    padding: "13px 0",
-    background: "black",
-    color: "white",
-    textTransform: "capitalize",
-    fontWeight: "lighter",
+    "&.MuiButton-root": {
+      width: "100%",
+      borderRadius: "0px",
+      padding: "13px 0 !important",
+      background: "black !important",
+      color: "white",
+      textTransform: "capitalize",
+      fontWeight: "lighter",
+    },
   },
 }));
